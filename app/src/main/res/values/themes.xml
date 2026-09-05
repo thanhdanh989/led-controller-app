@@ -1,8 +1,10 @@
 <resources>
-    <style name="Theme.LedController" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <!-- Dung ban Light co dinh (khong theo DayNight cua he thong) de luon nen trang -->
+    <style name="Theme.LedController" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryDark">@color/purple_700</item>
         <item name="colorAccent">@color/teal_200</item>
-        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:windowBackground">@color/bg_light</item>
+        <item name="android:textColorPrimary">@color/text_dark</item>
     </style>
 </resources>

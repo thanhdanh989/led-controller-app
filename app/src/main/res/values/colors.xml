@@ -6,4 +6,32 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bg_dark">#FF121212</color>
     <color name="surface_dark">#FF1E1E1E</color>
+
+    <!-- Nen trang (giao dien moi) -->
+    <color name="bg_light">#FFFFFFFF</color>
+    <color name="surface_light">#FFF0F0F0</color>
+    <color name="border_light">#FFDDDDDD</color>
+    <color name="text_dark">#FF1A1A1A</color>
+    <color name="text_secondary">#FF555555</color>
+    <color name="label_red">#FFD32F2F</color>
+    <color name="label_green">#FF2E7D32</color>
+    <color name="label_blue">#FF1565C0</color>
+
+    <!-- 16 mau co san de chon nhanh -->
+    <color name="preset_01">#FFFF0000</color>
+    <color name="preset_02">#FFFF4500</color>
+    <color name="preset_03">#FFFF8C00</color>
+    <color name="preset_04">#FFFFD700</color>
+    <color name="preset_05">#FFFFFF00</color>
+    <color name="preset_06">#FFADFF2F</color>
+    <color name="preset_07">#FF00FF00</color>
+    <color name="preset_08">#FF00FA9A</color>
+    <color name="preset_09">#FF00FFFF</color>
+    <color name="preset_10">#FF1E90FF</color>
+    <color name="preset_11">#FF0000FF</color>
+    <color name="preset_12">#FF4B0082</color>
+    <color name="preset_13">#FF8A2BE2</color>
+    <color name="preset_14">#FFFF00FF</color>
+    <color name="preset_15">#FFFF1493</color>
+    <color name="preset_16">#FFFFFFFF</color>
 </resources>
