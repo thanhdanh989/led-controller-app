@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_dark">
+    android:background="@color/bg_light">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textColor="@color/white"
+            android:textColor="@color/text_dark"
             android:textSize="22sp"
             android:textStyle="bold"
             android:layout_marginBottom="12dp" />
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Chưa kết nối"
-                android:textColor="@color/white"
+                android:textColor="@color/text_dark"
                 android:textSize="15sp" />
 
             <Button
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bật đèn"
-            android:textColor="@color/white"
+            android:textColor="@color/text_dark"
             android:checked="true"
             android:layout_marginBottom="12dp" />
 
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Độ sáng"
-            android:textColor="@color/white" />
+            android:textColor="@color/text_dark" />
         <SeekBar
             android:id="@+id/seekBrightness"
             android:layout_width="match_parent"
@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tốc độ hiệu ứng"
-            android:textColor="@color/white"
+            android:textColor="@color/text_dark"
             android:layout_marginTop="8dp" />
         <SeekBar
             android:id="@+id/seekSpeed"
@@ -82,20 +82,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chế độ"
-            android:textColor="@color/white"
+            android:textColor="@color/text_dark"
             android:layout_marginTop="16dp" />
         <Spinner
             android:id="@+id/spinnerMode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/surface_dark" />
+            android:background="@color/surface_light" />
 
-        <!-- ===== Mau don ===== -->
+        <!-- ===== Mau don: 16 mau co san, chon nhanh ===== -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Màu đơn (dùng cho nhiều chế độ)"
-            android:textColor="@color/white"
+            android:textColor="@color/text_dark"
             android:layout_marginTop="16dp" />
 
         <View
@@ -106,22 +106,48 @@
             android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp" />
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="Đỏ (R)" android:textColor="#FF8A80" />
-        <SeekBar android:id="@+id/seekR" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="Xanh lá (G)" android:textColor="#B9F6CA" />
-        <SeekBar android:id="@+id/seekG" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="Xanh dương (B)" android:textColor="#82B1FF" />
-        <SeekBar android:id="@+id/seekB" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+        <GridLayout
+            android:id="@+id/gridColorPresets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="4"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/btnToggleCustomColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tùy chỉnh màu khác... ▾"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:padding="6dp"
+            android:layout_marginTop="4dp" />
+
+        <LinearLayout
+            android:id="@+id/layoutCustomColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="4dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Đỏ (R)" android:textColor="@color/label_red" />
+            <SeekBar android:id="@+id/seekR" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Xanh lá (G)" android:textColor="@color/label_green" />
+            <SeekBar android:id="@+id/seekG" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Xanh dương (B)" android:textColor="@color/label_blue" />
+            <SeekBar android:id="@+id/seekB" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+        </LinearLayout>
 
         <!-- ===== Bang mau (Xep gach / Gradient / Palette Cycle) ===== -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bảng màu (cho Xếp gạch / Quét gradient / Chuyển màu theo bảng)"
-            android:textColor="@color/white"
+            android:textColor="@color/text_dark"
             android:layout_marginTop="16dp" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -153,7 +179,7 @@
                 android:orientation="vertical"
                 android:layout_marginEnd="8dp">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="Số lượng LED" android:textColor="@color/white" />
+                    android:text="Số lượng LED" android:textColor="@color/text_dark" />
                 <EditText
                     android:id="@+id/editLedCount"
                     android:layout_width="match_parent"
@@ -168,7 +194,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="Chân GPIO" android:textColor="@color/white" />
+                    android:text="Chân GPIO" android:textColor="@color/text_dark" />
                 <EditText
                     android:id="@+id/editGpioPin"
                     android:layout_width="match_parent"

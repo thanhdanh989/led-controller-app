@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="@color/bg_light"
     android:padding="16dp">
 
     <View
@@ -12,13 +13,40 @@
         android:background="@color/white"
         android:layout_marginBottom="12dp" />
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Đỏ (R)" />
-    <SeekBar android:id="@+id/dialogSeekR" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+    <GridLayout
+        android:id="@+id/dialogGridPresets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4" />
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Xanh lá (G)" />
-    <SeekBar android:id="@+id/dialogSeekG" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+    <TextView
+        android:id="@+id/dialogToggleCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tùy chỉnh màu khác... ▾"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp"
+        android:padding="6dp"
+        android:layout_marginTop="4dp" />
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Xanh dương (B)" />
-    <SeekBar android:id="@+id/dialogSeekB" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+    <LinearLayout
+        android:id="@+id/dialogCustomColorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Đỏ (R)" android:textColor="@color/label_red" />
+        <SeekBar android:id="@+id/dialogSeekR" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Xanh lá (G)" android:textColor="@color/label_green" />
+        <SeekBar android:id="@+id/dialogSeekG" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Xanh dương (B)" android:textColor="@color/label_blue" />
+        <SeekBar android:id="@+id/dialogSeekB" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+    </LinearLayout>
 
 </LinearLayout>
