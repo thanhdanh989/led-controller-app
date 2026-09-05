@@ -260,7 +260,13 @@ class MainActivity : AppCompatActivity(), BleControllerListener {
                     }
                 }
             } finally {
-                suppressSend = false
+                // QUAN TRONG: Spinner.setSelection() goi onItemSelected qua post() (bat dong bo,
+                // chay tre 1 vong Looper), khong goi ngay lap tuc. Neu tat suppressSend ngay tai day
+                // (dong bo), callback tre cua lan setSelection() ben tren se chay SAU khi cờ da tat,
+                // khien app tuong nguoi dung vua chon lai che do CU va tu gui nguoc lenh doi mode cu
+                // -> che do moi nguoi dung vua chon bi huy gan nhu ngay lap tuc.
+                // Doi 1 vong Looper nua (post) roi moi tat co, de callback tre do bi chan dung cach.
+                binding.root.post { suppressSend = false }
             }
         }
     }
