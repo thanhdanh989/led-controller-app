@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <View
+        android:id="@+id/dialogPreview"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:layout_marginBottom="12dp" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Đỏ (R)" />
+    <SeekBar android:id="@+id/dialogSeekR" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Xanh lá (G)" />
+    <SeekBar android:id="@+id/dialogSeekG" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Xanh dương (B)" />
+    <SeekBar android:id="@+id/dialogSeekB" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+
+</LinearLayout>

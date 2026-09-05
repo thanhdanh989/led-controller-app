@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <!-- ===== Ket noi ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Chưa kết nối"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btnConnect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kết nối" />
+        </LinearLayout>
+
+        <!-- ===== Bat/tat + do sang + toc do ===== -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchPower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bật đèn"
+            android:textColor="@color/white"
+            android:checked="true"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Độ sáng"
+            android:textColor="@color/white" />
+        <SeekBar
+            android:id="@+id/seekBrightness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tốc độ hiệu ứng"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp" />
+        <SeekBar
+            android:id="@+id/seekSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100" />
+
+        <!-- ===== Che do ===== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chế độ"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp" />
+        <Spinner
+            android:id="@+id/spinnerMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/surface_dark" />
+
+        <!-- ===== Mau don ===== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Màu đơn (dùng cho nhiều chế độ)"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp" />
+
+        <View
+            android:id="@+id/colorPreview"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="@color/teal_200"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Đỏ (R)" android:textColor="#FF8A80" />
+        <SeekBar android:id="@+id/seekR" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Xanh lá (G)" android:textColor="#B9F6CA" />
+        <SeekBar android:id="@+id/seekG" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Xanh dương (B)" android:textColor="#82B1FF" />
+        <SeekBar android:id="@+id/seekB" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="255" />
+
+        <!-- ===== Bang mau (Xep gach / Gradient / Palette Cycle) ===== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bảng màu (cho Xếp gạch / Quét gradient / Chuyển màu theo bảng)"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPalette"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:minHeight="56dp" />
+
+        <Button
+            android:id="@+id/btnAddColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ Thêm màu"
+            android:layout_marginTop="4dp" />
+
+        <!-- ===== So luong LED + chan GPIO ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Số lượng LED" android:textColor="@color/white" />
+                <EditText
+                    android:id="@+id/editLedCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="60" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Chân GPIO" android:textColor="@color/white" />
+                <EditText
+                    android:id="@+id/editGpioPin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="8" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnApplyConfig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Áp dụng số lượng LED / chân GPIO"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+</ScrollView>
