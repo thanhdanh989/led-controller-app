@@ -58,7 +58,7 @@ object BleProtocol {
     fun cmdGet(): String = JSONObject().apply { put("cmd", "get") }.toString()
 }
 
-/** Danh sach 20 che do, thu tu id phai KHOP CHINH XAC voi Config.h ben firmware. */
+/** Danh sach 50 che do, thu tu id phai KHOP CHINH XAC voi Config.h ben firmware. */
 val LED_MODES = listOf(
     "0 - Màu đơn",
     "1 - Xếp gạch theo màu",
@@ -79,5 +79,35 @@ val LED_MODES = listOf(
     "16 - Đổi màu ngẫu nhiên",
     "17 - Plasma",
     "18 - Nảy qua lại",
-    "19 - Chuyển màu theo bảng"
+    "19 - Chuyển màu theo bảng",
+    "20 - Mưa sao băng",
+    "21 - Lửa băng",
+    "22 - Dòng chảy ngẫu nhiên",
+    "23 - Cực quang",
+    "24 - Radar đôi",
+    "25 - Nhịp tim",
+    "26 - Giọt mưa",
+    "27 - Nến lung linh",
+    "28 - Đèn cảnh sát",
+    "29 - Bầu trời sao",
+    "30 - Hoàng hôn",
+    "31 - Sóng biển",
+    "32 - Rừng xanh",
+    "33 - Bão sét",
+    "34 - Nảy nhiều viên",
+    "35 - Cầu vồng lấp lánh",
+    "36 - Đổi màu tâm trạng",
+    "37 - Loang màu theo bảng",
+    "38 - Than hồng",
+    "39 - Băng lấp lánh",
+    "40 - Sóng xung",
+    "41 - Xoay màu theo bảng",
+    "42 - Ngọn lửa theo bảng",
+    "43 - Sáng mờ dần",
+    "44 - Đuổi lấp lánh",
+    "45 - Thác nước",
+    "46 - Thiên hà xoay",
+    "47 - Halloween",
+    "48 - Giáng sinh",
+    "49 - Disco"
 )
